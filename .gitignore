@@ -1,0 +1,8 @@
+# Directories
+/.idea/
+/target/
+
+# Files
+Akibot.iml
+Log.txt
+Token.txt
