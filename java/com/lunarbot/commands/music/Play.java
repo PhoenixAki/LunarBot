@@ -25,7 +25,7 @@ import static com.lunarbot.commands.Category.MUSIC;
 
 public class Play extends Command {
 	public Play() {
-		super(MUSIC, "`play` - Queues a song for playback. Unpauses the player if paused.", "`play`: Resumes playback if previously paused or stopped.\n`play link/searchTerms`: Queues a song if directly linked, or searches youtube and queues the first result.", "Play");
+		super(MUSIC, "play` - Queues a song for playback. Unpauses the player if paused.", "play`: Resumes playback if previously paused or stopped.\n`" + Main.prefix + "play link/searchTerms`: Queues a song if directly linked, or searches youtube and queues the first result.", "Play");
 	}
 
 	public void action(String[] args, MessageReceivedEvent event) {

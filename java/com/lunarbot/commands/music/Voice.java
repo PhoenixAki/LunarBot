@@ -16,7 +16,7 @@ import static com.lunarbot.commands.Category.MUSIC;
 
 public class Voice extends Command {
     public Voice(){
-        super(MUSIC, "`voice` - Controls LunarBot joining/leaving voice channels.", "`voice join`: Summons LunarBot to a voice channel.\n`voice leave`: Disconnects LunarBot from a voice channel.", "Voice");
+        super(MUSIC, "voice` - Controls LunarBot joining/leaving voice channels.", "voice join`: Summons LunarBot to a voice channel.\n`" + Main.prefix + "voice leave`: Disconnects LunarBot from a voice channel.", "Voice");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

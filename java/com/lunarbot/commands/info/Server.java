@@ -21,7 +21,7 @@ import static com.lunarbot.commands.Category.INFO;
 
 public class Server extends Command {
     public Server(){
-        super(INFO, "`server` - Outputs info about the current server.", "`" + Main.prefix + "server`: Outputs info about the current server (name, creation date, etc.).", "Server");
+        super(INFO, "server` - Outputs info about the current server.", "server`: Outputs info about the current server (name, creation date, etc.).", "Server");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

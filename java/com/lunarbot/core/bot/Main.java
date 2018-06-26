@@ -14,6 +14,7 @@ import com.lunarbot.commands.info.Log;
 import com.lunarbot.commands.info.Shutdown;
 import com.lunarbot.commands.info.*;
 import com.lunarbot.commands.music.*;
+import com.lunarbot.commands.toontown.Releas;
 import com.lunarbot.core.audio.AudioPlayerSendHandler;
 import com.lunarbot.core.audio.TrackScheduler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
@@ -122,7 +123,7 @@ public class Main {
         commands.put("volume", new Volume());
 
         //Toontown list
-
+		commands.put("releas", new Releas());
 
         //Adding category names to hashset for comparisons later
         for(Category cat : Category.values()){

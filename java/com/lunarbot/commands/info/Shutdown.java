@@ -16,7 +16,7 @@ import static com.lunarbot.commands.Category.INFO;
 
 public class Shutdown extends Command {
 	public Shutdown(){
-		super(INFO, "`shutdown` - Shuts down LunarBot.", "`" + Main.prefix + "shutdown`: Shuts down LunarBot.", "Shutdown");
+		super(INFO, "shutdown` - Shuts down LunarBot.", "shutdown`: Shuts down LunarBot.", "Shutdown");
 	}
 
 	public void action(String[] args, MessageReceivedEvent event) {

@@ -18,7 +18,7 @@ import static com.lunarbot.commands.Category.MUSIC;
 
 public class Seek extends Command {
     public Seek(){
-        super(MUSIC, "`seek` - Skips to the given time in the playing track.", "`seek mm:ss`: Skips to the specified position in the song.\nIf the given position is less than 00:00, the track restarts at 00:00.\nIf the given position is after the end of the track, the track is skipped.", "Seek");
+        super(MUSIC, "seek` - Skips to the given time in the playing song.", "seek mm:ss`: Skips to the specified position in the song.\nIf the given position is less than 00:00, the song restarts.\nIf the given position is after the end of the song, the song is skipped.", "Seek");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

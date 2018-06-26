@@ -17,7 +17,7 @@ import static com.lunarbot.commands.Category.MUSIC;
 
 public class Remove extends Command {
     public Remove(){
-        super(MUSIC, "`remove` - Removes a song from the queue.", "`remove songNumber`: Removes a song from the queue.", "Remove");
+        super(MUSIC, "remove` - Removes a song from the queue.", "remove songNumber`: Removes a song from the queue.", "Remove");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

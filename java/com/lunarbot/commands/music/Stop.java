@@ -17,7 +17,7 @@ import static com.lunarbot.commands.Category.MUSIC;
 
 public class Stop extends Command {
     public Stop(){
-        super(MUSIC, "`stop` - Stops the current song.", "`stop`: Stops the current song. Stopping and then resuming with `"+ Main.prefix + "play` is effectively the same as calling `" + Main.prefix + "skip`.", "Stop");
+        super(MUSIC, "stop` - Stops the current song.", "stop`: Stops the current song. Stopping and then resuming with `"+ Main.prefix + "play` is effectively the same as calling `" + Main.prefix + "skip`.", "Stop");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

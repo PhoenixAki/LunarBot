@@ -61,7 +61,7 @@ public abstract class Command {
 
     private void embedHelp(MessageReceivedEvent event, String output, String commandName){
         EmbedBuilder embedBuilder = setupEmbed(event);
-        embedBuilder.addField("Command Info: \"" + commandName + "\"", output, true);
+        embedBuilder.addField("Command Info: \"" + commandName + "\"", "`" + Main.prefix + output, true);
         event.getChannel().sendMessage(embedBuilder.build()).queue();
     }
 

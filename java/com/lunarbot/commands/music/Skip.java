@@ -17,7 +17,7 @@ import static com.lunarbot.commands.Category.MUSIC;
 
 public class Skip extends Command {
     public Skip(){
-        super(MUSIC, "`skip` - Skips the current song.", "`skip`: Skips the current song.", "Skip");
+        super(MUSIC, "skip` - Skips the current song.", "skip`: Skips the current song.", "Skip");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

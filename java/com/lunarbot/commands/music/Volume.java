@@ -16,7 +16,7 @@ import static com.lunarbot.commands.Category.MUSIC;
 
 public class Volume extends Command {
     public Volume(){
-        super(MUSIC, "`volume` - Changes the current volume.", "`volume`: Displays the current volume.\n`volume newVolume`: Updates the current volume (`newVolume` must be 1-100).", "Volume");
+        super(MUSIC, "volume` - Changes the current volume.", "volume`: Displays the current volume.\n`" + Main.prefix + "volume newVolume`: Updates the current volume (`newVolume` must be 1-100).", "Volume");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

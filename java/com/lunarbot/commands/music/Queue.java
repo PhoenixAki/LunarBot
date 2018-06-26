@@ -17,7 +17,7 @@ import static com.lunarbot.commands.Category.MUSIC;
 
 public class Queue extends Command {
     public Queue(){
-        super(MUSIC, "`queue` - Displays info about songs in the queue.", "`" + Main.prefix + "queue`: Displays info for (up to) the first 10 songs in the queue.\n`" + Main.prefix + "queue clear`: Clears the queue.", "Queue");
+        super(MUSIC, "queue` - Displays info about songs in the queue.", "queue`: Displays info for (up to) the first 10 songs in the queue.\n`" + Main.prefix + "queue clear`: Clears the queue.", "Queue");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

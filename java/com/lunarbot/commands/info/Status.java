@@ -17,7 +17,7 @@ import static com.lunarbot.commands.Category.INFO;
 
 public class Status extends Command {
     public Status(){
-        super(INFO, "`status` - Outputs info about LunarBot's current status.", "`status`: Outputs info about LunarBot's current status.", "Status");
+        super(INFO, "status` - Outputs info about LunarBot's current status.", "status`: Outputs info about LunarBot's current status.", "Status");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

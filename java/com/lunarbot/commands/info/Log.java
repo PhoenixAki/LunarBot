@@ -16,7 +16,7 @@ import static com.lunarbot.commands.Category.INFO;
 
 public class Log extends Command {
 	public Log(){
-		super(INFO, "`log` - PMs log of activity since startup.", "`" + Main.prefix + "log`: PMs log of activity since startup.", "Log");
+		super(INFO, "log` - PMs log of activity since startup.", "log`: PMs log of activity since startup.", "Log");
 	}
 
 	public void action(String[] args, MessageReceivedEvent event) {

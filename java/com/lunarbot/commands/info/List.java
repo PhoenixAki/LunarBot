@@ -20,7 +20,7 @@ import static com.lunarbot.commands.Category.INFO;
 
 public class List extends Command {
 	public List(){
-		super(INFO, "`list` - Returns list of commands.", "`" + Main.prefix + "list info/music/toontown`: Displays a list of commands, by category.", "List");
+		super(INFO, "list` - Returns list of commands.", "list info/music/toontown`: Displays a list of commands, by category.", "List");
 	}
 
 	public void action(String[] args, MessageReceivedEvent event) {
@@ -35,7 +35,7 @@ public class List extends Command {
 		        SortedSet<String> keys = new TreeSet<>(Main.commands.keySet());
 		        for(String key : keys){
 		            if(Main.commands.get(key).getCategory().name().equalsIgnoreCase(args[0])){
-		                output = output.concat(Main.commands.get(key).getInfo() + "\n");
+		                output = output.concat("`" + Main.prefix + Main.commands.get(key).getInfo() + "\n");
                     }
                 }
                 embedOutput(output, event);

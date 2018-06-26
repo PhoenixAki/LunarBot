@@ -19,7 +19,7 @@ import static com.lunarbot.commands.Category.INFO;
 
 public class Users extends Command {
     public Users(){
-        super(INFO, "`user` - Outputs info about the mentioned user(s).", "`" + Main.prefix + "user @userHere`: Outputs info about the mentioned user(s).", "User");
+        super(INFO, "user` - Outputs info about the mentioned user(s).", "user @userHere`: Outputs info about the mentioned user(s).", "User");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {

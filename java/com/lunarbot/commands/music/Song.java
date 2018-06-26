@@ -19,7 +19,7 @@ import static com.lunarbot.commands.Category.MUSIC;
 
 public class Song extends Command {
     public Song(){
-        super(MUSIC, "`song` - Outputs current song info.", "`song`: Outputs info about the currently playing song.", "Song");
+        super(MUSIC, "song` - Outputs current song info.", "song`: Outputs info about the currently playing song.", "Song");
     }
 
     public void action(String[] args, MessageReceivedEvent event) {
