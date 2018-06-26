@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-	* LunarBot v1.0 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+	* LunarBot v1.2 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
 	* 
 	* Main
 	* Mostly startup tasks and variable storage for use from commands.
@@ -14,6 +14,7 @@ import com.lunarbot.commands.info.Log;
 import com.lunarbot.commands.info.Shutdown;
 import com.lunarbot.commands.info.*;
 import com.lunarbot.commands.music.*;
+import com.lunarbot.commands.toontown.Group;
 import com.lunarbot.commands.toontown.Releas;
 import com.lunarbot.core.audio.AudioPlayerSendHandler;
 import com.lunarbot.core.audio.TrackScheduler;
@@ -37,7 +38,7 @@ import java.util.Scanner;
 public class Main {
 
     //Bot Info Variables
-    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v1.0", prefix = "!";
+    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v1.2", prefix = "!";
     public static long commandCount = 0, messageCount = 0, startupTime;
     private static String botToken;
     public static HashSet<String> categories = new HashSet<>();
@@ -58,7 +59,7 @@ public class Main {
 	    openFiles();
 
 		try{
-			JDA jda = new JDABuilder(AccountType.BOT).addEventListener(new com.lunarbot.core.bot.CommandHandler()).setToken(botToken).buildBlocking();
+			JDA jda = new JDABuilder(AccountType.BOT).addEventListener(new Listener()).setToken(botToken).buildBlocking();
 			jda.setAutoReconnect(true);
 			jda.getPresence().setGame(Game.of(Game.GameType.DEFAULT, "LunarBot " + version + " | " + Main.prefix + "help"));
 			startupTime = System.currentTimeMillis() + 14400000;
@@ -96,7 +97,7 @@ public class Main {
 		SimpleDateFormat sdf = new SimpleDateFormat("M/dd/yyyy, h:mm:ss a 'UTC'");
 		String time = sdf.format(UtcTimeInMillis);
 		Main.updateLog("Username", "Command Name", "Date/Time");
-		Main.updateLog("lunarbot", "Startup", time);
+		Main.updateLog("LunarBot", "Startup", time);
 	}
 	
 	private static void addCommands() {
@@ -124,6 +125,7 @@ public class Main {
 
         //Toontown list
 		commands.put("releas", new Releas());
+		commands.put("group", new Group());
 
         //Adding category names to hashset for comparisons later
         for(Category cat : Category.values()){

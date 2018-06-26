@@ -1,7 +1,7 @@
 package com.lunarbot.commands.music;
 
 /*
-    * LunarBot v1.0 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v1.2 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Remove
     * Removes a track from the queue, based on its position in the queue.

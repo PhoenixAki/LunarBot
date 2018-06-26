@@ -1,5 +1,13 @@
 package com.lunarbot.commands.toontown;
 
+/*
+    * LunarBot v1.2 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    *
+    * Releas
+    * RELEAS GAM
+    * Takes in format !releas
+*/
+
 import com.lunarbot.commands.Command;
 import com.lunarbot.core.bot.Main;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;

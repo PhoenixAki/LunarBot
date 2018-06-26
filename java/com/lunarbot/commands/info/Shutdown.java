@@ -1,7 +1,7 @@
 package com.lunarbot.commands.info;
 
 /*
- 	* LunarBot v1.0 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+ 	* LunarBot v1.2 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
  	* 
  	* Shutdown
  	* Shuts down LunarBot.
