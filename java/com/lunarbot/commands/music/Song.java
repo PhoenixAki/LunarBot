@@ -1,7 +1,7 @@
 package com.lunarbot.commands.music;
 
 /*
-    * LunarBot v1.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v1.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Song
     * Outputs info about the currently playing track (title, url link, position/duration, and who requested it).

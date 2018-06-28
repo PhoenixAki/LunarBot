@@ -1,12 +1,13 @@
 package com.lunarbot.core.bot;
 
 /*
-    * LunarBot v1.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v1.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Listener
     * Handles the process of processing commands and listening for events.
  */
 
+import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
@@ -16,7 +17,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Listener extends ListenerAdapter {
     public void onGuildMemberJoin(GuildMemberJoinEvent event){
-
+        event.getGuild().getTextChannelById("459640979683672066").sendMessage("Welcome to the Lunar Draconis Discord server, " + event.getMember().getAsMention() + "! Please read over the "
+                + "#rules and follow the instructions to confirm you have read them, and you will then be able to access the rest of the server.").queue();
     }
 
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -26,6 +28,14 @@ public class Listener extends ListenerAdapter {
         }
 
         ++Main.messageCount;
+
+        if(event.getMessage().getContentDisplay().equalsIgnoreCase(Main.prefix + "rulesagree")){
+            Role clubMember = event.getGuild().getRolesByName("Club Member", true).get(0);
+            if(!event.getMember().getRoles().contains(clubMember)){
+                event.getGuild().getController().addRolesToMember(event.getMember(), clubMember).queue();
+            }
+            return;
+        }
 
         //LunarBot only processes commands if they start with ! or an @mention to its name
         if(event.getMessage().getContentDisplay().startsWith(Main.prefix)) {

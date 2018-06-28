@@ -1,7 +1,7 @@
 package com.lunarbot.core.audio;
 
 /*
-    * LunarBot v1.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v1.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * TrackInfo
     * Used in setting user data for Audio Tracks. Contains username of requester and the channel associated to it.

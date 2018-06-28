@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-	* LunarBot v1.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+	* LunarBot v1.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
 	* 
 	* Main
 	* Mostly startup tasks and variable storage for use from commands.
@@ -38,7 +38,7 @@ import java.util.Scanner;
 public class Main {
 
     //Bot Info Variables
-    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v1.3", prefix = "!";
+    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v1.4", prefix = "!";
     public static long commandCount = 0, messageCount = 0, startupTime;
     private static String botToken;
     public static HashSet<String> categories = new HashSet<>();
