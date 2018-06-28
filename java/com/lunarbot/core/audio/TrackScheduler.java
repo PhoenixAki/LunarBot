@@ -1,7 +1,7 @@
 package com.lunarbot.core.audio;
 
 /*
-    * LunarBot v1.2 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v1.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * TrackScheduler
     * Handles all track scheduling actions.

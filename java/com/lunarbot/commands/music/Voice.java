@@ -1,7 +1,7 @@
 package com.lunarbot.commands.music;
 
 /*
-    * LunarBot v1.2 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v1.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Voice
     * Handles LunarBot joining or leaving voice channels.
@@ -30,7 +30,7 @@ public class Voice extends Command {
                     event.getChannel().sendMessage(":x: Either you're not in a voice channel, or I already am.").queue();
                 }else{
                     event.getGuild().getAudioManager().openAudioConnection(event.getMember().getVoiceState().getChannel());
-                    event.getChannel().sendMessage("heavy_check_mark: Joining voice channel \"" + event.getMember().getVoiceState().getChannel().getName() + "\".").queue();
+                    event.getChannel().sendMessage(":heavy_check_mark: Joining voice channel \"" + event.getMember().getVoiceState().getChannel().getName() + "\".").queue();
                 }
             }else if(args[0].equalsIgnoreCase("leave")){
                 if(isVoiceOk(event.getGuild().getSelfMember().getVoiceState(), event.getMember().getVoiceState(), event.getChannel())){
