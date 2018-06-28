@@ -1,7 +1,7 @@
 package com.lunarbot.core.audio;
 
 /*
-    * LunarBot v1.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.0 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * AudioPlayerSendHandler
     * Handles the process of sending audio to the guild's audio player.

@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-    * LunarBot v1.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.0 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Listener
     * Handles the process of processing commands and listening for events.
@@ -29,6 +29,13 @@ public class Listener extends ListenerAdapter {
 
         ++Main.messageCount;
 
+        String checkMessage = event.getMessage().getContentDisplay().replace(" ", "").toLowerCase();
+        if(!event.getChannel().getId().equalsIgnoreCase("456158433549352973") && Arrays.stream(Main.badWords).parallel().anyMatch(checkMessage::contains)){
+            event.getMessage().delete().queueAfter(1, TimeUnit.SECONDS);
+            event.getChannel().sendMessage(event.getAuthor().getAsMention() + " No bad language! Keep it PG.").queue(message -> message.delete().queueAfter(5, TimeUnit.SECONDS));
+            return;
+        }
+
         if(event.getMessage().getContentDisplay().equalsIgnoreCase(Main.prefix + "rulesagree")){
             Role clubMember = event.getGuild().getRolesByName("Club Member", true).get(0);
             if(!event.getMember().getRoles().contains(clubMember)){
@@ -53,7 +60,7 @@ public class Listener extends ListenerAdapter {
         if(!event.getChannelType().isGuild()){
             event.getChannel().sendMessage("Sorry, I can't do commands via Direct Messages.").queue();
             return;
-        }else if(!event.getChannel().getId().equalsIgnoreCase("457392726170796043") && !event.getChannel().getId().equalsIgnoreCase("456158433549352973") && !event.getChannel().getId().equalsIgnoreCase("459640979683672066")){
+        }else if(!event.getChannel().getId().equalsIgnoreCase("457392726170796043") && !event.getChannel().getId().equalsIgnoreCase("456158433549352973")){
             event.getMessage().delete().queueAfter(1, TimeUnit.SECONDS);
             event.getChannel().sendMessage(event.getAuthor().getAsMention() + " No bot commands here! Only use bot commands in #bot-commands.").queue(message -> message.delete().queueAfter(5, TimeUnit.SECONDS));
             return;
