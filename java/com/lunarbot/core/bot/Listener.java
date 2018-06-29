@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-    * LunarBot v2.0 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Listener
     * Handles the process of processing commands and listening for events.
@@ -9,6 +9,7 @@ package com.lunarbot.core.bot;
 
 import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.core.events.guild.voice.GuildVoiceLeaveEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
@@ -19,6 +20,14 @@ public class Listener extends ListenerAdapter {
     public void onGuildMemberJoin(GuildMemberJoinEvent event){
         event.getGuild().getTextChannelById("459640979683672066").sendMessage("Welcome to the Lunar Draconis Discord server, " + event.getMember().getAsMention() + "! Please read over the "
                 + "#rules and follow the instructions to confirm you have read them, and you will then be able to access the rest of the server.").queue();
+    }
+
+    public void onGuildVoiceLeave(GuildVoiceLeaveEvent event){
+        if(event.getChannelLeft().getMembers().size() == 1){
+            Main.scheduler.clearQueue(null);
+            Main.player.stopTrack();
+            event.getGuild().getAudioManager().closeAudioConnection();
+        }
     }
 
     public void onMessageReceived(MessageReceivedEvent event) {

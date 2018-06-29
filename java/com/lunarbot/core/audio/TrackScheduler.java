@@ -1,7 +1,7 @@
 package com.lunarbot.core.audio;
 
 /*
-    * LunarBot v2.0 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * TrackScheduler
     * Handles all track scheduling actions.
@@ -109,7 +109,9 @@ public class TrackScheduler extends AudioEventAdapter {
 
     public void clearQueue(MessageReceivedEvent event){
         queue.clear();
-        event.getChannel().sendMessage("Queue emptied.").queue();
+        if(event != null){
+            event.getChannel().sendMessage("Queue emptied.").queue();
+        }
     }
 
     public boolean hasNextTrack(){
