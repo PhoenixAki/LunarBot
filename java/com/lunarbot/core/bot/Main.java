@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-	* LunarBot v2.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+	* LunarBot v2.1.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
 	* 
 	* Main
 	* Mostly startup tasks and variable storage for use from commands.
@@ -36,7 +36,7 @@ import java.util.Scanner;
 public class Main {
 
     //Bot Info Variables
-    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v2.1", prefix = "!";
+    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v2.1.1", prefix = "!";
     public static long commandCount = 0, messageCount = 0, startupTime;
     private static String botToken;
     static String[] badWords = {"ass", "asshole", "bastard", "bitch", "cunt", "damn", "dick", "fag", "fuck", "nigger", "penis", "pussy", "sex", "shit", "vagina"};
@@ -60,7 +60,7 @@ public class Main {
 		try{
 			JDA jda = new JDABuilder(AccountType.BOT).addEventListener(new Listener()).setToken(botToken).buildBlocking();
 			jda.setAutoReconnect(true);
-			jda.getPresence().setGame(Game.of(Game.GameType.DEFAULT, "LunarBot " + version + " | " + Main.prefix + "help"));
+			jda.getPresence().setGame(Game.of(Game.GameType.DEFAULT, "LunarBot " + version + " | " + Main.prefix + "list help"));
 			startupTime = System.currentTimeMillis() + 14400000;
 		}catch(Exception e){
 			e.printStackTrace();

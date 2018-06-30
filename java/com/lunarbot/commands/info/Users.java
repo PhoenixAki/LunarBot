@@ -1,7 +1,7 @@
 package com.lunarbot.commands.info;
 
 /*
-    * LunarBot v2.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.1.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Users
     * Returns relevant information about the mentioned user(s). Class name is Users to avoid naming conflict with JDA class User.
