@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-    * LunarBot v2.1.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.2 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Listener
     * Handles the process of processing commands and listening for events.
@@ -69,7 +69,7 @@ public class Listener extends ListenerAdapter {
         if(!event.getChannelType().isGuild()){
             event.getChannel().sendMessage("Sorry, I can't do commands via Direct Messages.").queue();
             return;
-        }else if(!event.getChannel().getId().equalsIgnoreCase("457392726170796043") && !event.getChannel().getId().equalsIgnoreCase("456158433549352973")){
+        }else if(Arrays.stream(Main.allowedChannels).parallel().noneMatch(event.getChannel().getId()::contains)){
             event.getMessage().delete().queueAfter(1, TimeUnit.SECONDS);
             event.getChannel().sendMessage(event.getAuthor().getAsMention() + " No bot commands here! Only use bot commands in #bot-commands.").queue(message -> message.delete().queueAfter(5, TimeUnit.SECONDS));
             return;

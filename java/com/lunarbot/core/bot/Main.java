@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-	* LunarBot v2.1.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+	* LunarBot v2.2 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
 	* 
 	* Main
 	* Mostly startup tasks and variable storage for use from commands.
@@ -13,7 +13,7 @@ import com.lunarbot.commands.info.*;
 import com.lunarbot.commands.info.Shutdown;
 import com.lunarbot.commands.music.*;
 import com.lunarbot.commands.toontown.Group;
-import com.lunarbot.commands.toontown.Releas;
+import com.lunarbot.commands.toontown.Fix;
 import com.lunarbot.core.audio.AudioPlayerSendHandler;
 import com.lunarbot.core.audio.TrackScheduler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
@@ -36,10 +36,11 @@ import java.util.Scanner;
 public class Main {
 
     //Bot Info Variables
-    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v2.1.1", prefix = "!";
+    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v2.2", prefix = "!";
     public static long commandCount = 0, messageCount = 0, startupTime;
     private static String botToken;
     static String[] badWords = {"ass", "asshole", "bastard", "bitch", "cunt", "damn", "dick", "fag", "fuck", "nigger", "penis", "pussy", "sex", "shit", "vagina"};
+    static String[] allowedChannels = {"457392726170796043", "456158433549352973"};
     public static HashSet<String> categories = new HashSet<>();
 
     //Main Variables (used in startup + updating files)
@@ -123,7 +124,7 @@ public class Main {
         commands.put("volume", new Volume());
 
         //Toontown list
-		commands.put("releas", new Releas());
+		commands.put("fix", new Fix());
 		commands.put("group", new Group());
 
         //Adding category names to hashset for comparisons later

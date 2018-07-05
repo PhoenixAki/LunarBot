@@ -1,7 +1,7 @@
 package com.lunarbot.commands.music;
 
 /*
-	* LunarBot v2.1.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+	* LunarBot v2.2 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
 	*
 	* Play
 	* Queues a song or playlist to be played by the guild's AudioPlayer. Also resumes the player if paused/stopped.
