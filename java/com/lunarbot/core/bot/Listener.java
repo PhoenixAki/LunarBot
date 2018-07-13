@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Listener extends ListenerAdapter {
     public void onGuildMemberJoin(GuildMemberJoinEvent event){
-        event.getGuild().getTextChannelById("459640979683672066").sendMessage("Welcome to the Lunar Draconis Discord server, " + event.getMember().getAsMention() + "! Please read over the "
+        event.getGuild().getTextChannelById("461074685678059521").sendMessage("Welcome to the Lunar Draconis Discord server, " + event.getMember().getAsMention() + "! Please read over the "
                 + "#rules and follow the instructions to confirm you have read them, and you will then be able to access the rest of the server.").queue();
     }
 
@@ -38,11 +38,17 @@ public class Listener extends ListenerAdapter {
 
         ++Main.messageCount;
 
-        String checkMessage = event.getMessage().getContentDisplay().replace(" ", "").toLowerCase();
-        if(!event.getChannel().getId().equalsIgnoreCase("456158433549352973") && Arrays.stream(Main.badWords).parallel().anyMatch(checkMessage::contains)){
-            event.getMessage().delete().queueAfter(1, TimeUnit.SECONDS);
-            event.getChannel().sendMessage(event.getAuthor().getAsMention() + " No bad language! Keep it PG.").queue(message -> message.delete().queueAfter(5, TimeUnit.SECONDS));
-            return;
+        if(!event.getChannel().getId().equalsIgnoreCase("456158433549352973")){
+            String[] splitMessage = event.getMessage().getContentDisplay().split("\\s");
+            for(String messageWord : splitMessage){
+                for(String badWord : Main.badWords){
+                    if(messageWord.equalsIgnoreCase(badWord)){
+                        event.getMessage().delete().queueAfter(1, TimeUnit.SECONDS);
+                        event.getChannel().sendMessage(event.getAuthor().getAsMention() + " No bad language! Keep it PG.").queue(m -> m.delete().queueAfter(5, TimeUnit.SECONDS));
+                        return;
+                    }
+                }
+            }
         }
 
         if(event.getMessage().getContentDisplay().equalsIgnoreCase(Main.prefix + "rulesagree")){
