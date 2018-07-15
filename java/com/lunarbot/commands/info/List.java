@@ -1,7 +1,7 @@
 package com.lunarbot.commands.info;
 
 /*
- 	* LunarBot v2.2.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+ 	* LunarBot v2.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
  	* 
  	* List
  	* Returns a list of all commands for the given category (listed in the enum Category).

@@ -1,7 +1,7 @@
 package com.lunarbot.commands.toontown;
 
 /*
- * LunarBot v2.2.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+ * LunarBot v2.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
  *
  * Group
  * Coordinates groups.

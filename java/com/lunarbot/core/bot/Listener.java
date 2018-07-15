@@ -1,16 +1,18 @@
 package com.lunarbot.core.bot;
 
 /*
-    * LunarBot v2.2.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Listener
     * Handles the process of processing commands and listening for events.
  */
 
+import com.lunarbot.commands.toontown.Roles;
 import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.core.events.guild.voice.GuildVoiceLeaveEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.guild.react.GenericGuildMessageReactionEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import java.util.Arrays;
@@ -18,8 +20,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Listener extends ListenerAdapter {
     public void onGuildMemberJoin(GuildMemberJoinEvent event){
-        event.getGuild().getTextChannelById("461074685678059521").sendMessage("Welcome to the Lunar Draconis Discord server, " + event.getMember().getAsMention() + "! Please read over the "
-                + "#rules and follow the instructions to confirm you have read them, and you will then be able to access the rest of the server.").queue();
+        event.getGuild().getTextChannelById("461074685678059521").sendMessage("Welcome to the Lunar Draconis Discord server, " + event.getMember().getAsMention() + "! Please read over "
+                + "#rules, type `!agree` here in #welcome, then you will then be able to access the rest of the server.").queue();
     }
 
     public void onGuildVoiceLeave(GuildVoiceLeaveEvent event){
@@ -27,6 +29,28 @@ public class Listener extends ListenerAdapter {
             Main.scheduler.clearQueue(null);
             Main.player.stopTrack();
             event.getGuild().getAudioManager().closeAudioConnection();
+        }
+    }
+
+    public void onGenericGuildMessageReaction(GenericGuildMessageReactionEvent event){
+        Role role;
+        if(event.getMessageId().equalsIgnoreCase(Roles.messageID) && !event.getReaction().isSelf()){
+            if(event.getReactionEmote().getName().equalsIgnoreCase("1⃣")){
+                role = event.getGuild().getRolesByName("Zerker Type Toon", true).get(0);
+            }else if(event.getReactionEmote().getName().equalsIgnoreCase("2⃣")){
+                role = event.getGuild().getRolesByName("Support Type Toon", true).get(0);
+            }else if(event.getReactionEmote().getName().equalsIgnoreCase("3⃣")){
+                role = event.getGuild().getRolesByName("Hybrid Zerker Type Toon", true).get(0);
+            }else if(event.getReactionEmote().getName().equalsIgnoreCase("4⃣")){
+                role = event.getGuild().getRolesByName("Hybrid Support Type Toon", true).get(0);
+            }else if(event.getReactionEmote().getName().equalsIgnoreCase("5⃣")){
+                role = event.getGuild().getRolesByName("Jack Of All Trades Type Toon", true).get(0);
+            }else{
+                return;
+            }
+
+            event.getGuild().getController().addSingleRoleToMember(event.getMember(), role).queue();
+            event.getChannel().sendMessage("Role \"" + role.getName() + "\" successfully added.").queue();
         }
     }
 
@@ -51,7 +75,7 @@ public class Listener extends ListenerAdapter {
             }
         }
 
-        if(event.getMessage().getContentDisplay().equalsIgnoreCase(Main.prefix + "rulesagree")){
+        if(event.getMessage().getContentDisplay().equalsIgnoreCase(Main.prefix + "agree")){
             Role clubMember = event.getGuild().getRolesByName("Club Member", true).get(0);
             if(!event.getMember().getRoles().contains(clubMember)){
                 event.getGuild().getController().addRolesToMember(event.getMember(), clubMember).queue();

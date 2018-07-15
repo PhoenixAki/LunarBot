@@ -1,7 +1,7 @@
 package com.lunarbot.commands.info;
 
 /*
-    * LunarBot v2.2.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Server
     * Outputs relevant information about the server.
@@ -38,7 +38,7 @@ public class Server extends Command {
         embedBuilder.addField("Server Owner", event.getGuild().getOwner().getEffectiveName(), true);
         embedBuilder.addField("Creation Date", formatTime(event.getGuild().getCreationTime(), event), true);
         embedBuilder.addField("User Count", Integer.toString(event.getGuild().getMembers().size()), true);
-        embedBuilder.addField("Role Count", Integer.toString(event.getGuild().getRoles().size()-1), true);
+        embedBuilder.addField("Roles Count", Integer.toString(event.getGuild().getRoles().size()-1), true);
         embedBuilder.setThumbnail(event.getGuild().getIconUrl());
         event.getChannel().sendMessage(embedBuilder.build()).queue();
     }
