@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-    * LunarBot v2.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.3.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Listener
     * Handles the process of processing commands and listening for events.
@@ -34,7 +34,7 @@ public class Listener extends ListenerAdapter {
 
     public void onGenericGuildMessageReaction(GenericGuildMessageReactionEvent event){
         Role role;
-        if(event.getMessageId().equalsIgnoreCase(Roles.messageID) && !event.getReaction().isSelf()){
+        if(event.getMessageId().equalsIgnoreCase(Roles.messageID) && !event.getReaction().isSelf() && event.getMember().getUser().getId().equalsIgnoreCase(Roles.senderID)){
             if(event.getReactionEmote().getName().equalsIgnoreCase("1⃣")){
                 role = event.getGuild().getRolesByName("Zerker Type Toon", true).get(0);
             }else if(event.getReactionEmote().getName().equalsIgnoreCase("2⃣")){
@@ -49,8 +49,13 @@ public class Listener extends ListenerAdapter {
                 return;
             }
 
-            event.getGuild().getController().addSingleRoleToMember(event.getMember(), role).queue();
-            event.getChannel().sendMessage("Role \"" + role.getName() + "\" successfully added.").queue();
+            if(event.getMember().getRoles().contains(role)){
+                event.getGuild().getController().removeRolesFromMember(event.getMember(), role).queue();
+                event.getChannel().sendMessage("Role \"" + role.getName() + "\" successfully removed.").queue();
+            }else{
+                event.getGuild().getController().addSingleRoleToMember(event.getMember(), role).queue();
+                event.getChannel().sendMessage("Role \"" + role.getName() + "\" successfully added.").queue();
+            }
         }
     }
 

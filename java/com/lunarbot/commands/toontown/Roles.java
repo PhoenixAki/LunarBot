@@ -1,7 +1,7 @@
 package com.lunarbot.commands.toontown;
 
 /*
-  * LunarBot v2.3 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+  * LunarBot v2.3.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
   *
   * Roles
   * Manages roles for a user.
@@ -15,7 +15,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import static com.lunarbot.commands.Category.TOONTOWN;
 
 public class Roles extends Command {
-    public static String messageID;
+    public static String messageID, senderID;
 
     public Roles() {
         super(TOONTOWN, "role` - Manages roles for a user.", "role` - Manages roles for a user. React to bot messages to make a decision.", "Group");
@@ -31,13 +31,14 @@ public class Roles extends Command {
                 ":three: **Hybrid Zerker Type Toon** - Primarily damage-dealing mixed with some support (e.g. using toon-up and zap.)\n" +
                 ":four: **Hybrid Support Type Toon** - Primarily support-healing mixed with some damage (e.g. using toon-up/lure and throw/sound.)\n" +
                 ":five: **Jack of All Trades Toon** - Useful in various scenarios (e.g. having most gag tracks but not many prestiged.)\n\n" +
-                "React with the number associated to the role you'd like to have added.").queue(message -> {
+                "Click the number below of the toon role you'd like to have added.\nTo remove a toon role, click the number below of a toon role that you already have, and it will be removed.").queue(message -> {
                     message.addReaction("\u0031\u20E3").queue();
                     message.addReaction("\u0032\u20E3").queue();
                     message.addReaction("\u0033\u20E3").queue();
                     message.addReaction("\u0034\u20E3").queue();
                     message.addReaction("\u0035\u20E3").queue();
                     messageID = message.getId();
+                    senderID = event.getMember().getUser().getId();
         });
     }
 }

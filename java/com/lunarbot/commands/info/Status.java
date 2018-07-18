@@ -1,7 +1,7 @@
 package com.lunarbot.commands.info;
 
 /*
-    * LunarBot v2.3 by PhoenixAki: General purpose bot for usage in the Lunar Draconis clan server.
+    * LunarBot v2.3.1 by PhoenixAki: General purpose bot for usage in the Lunar Draconis clan server.
     *
     * Status
     * Outputs information about the bot's current status.
