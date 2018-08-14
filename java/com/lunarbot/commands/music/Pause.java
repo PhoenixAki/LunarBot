@@ -1,7 +1,7 @@
 package com.lunarbot.commands.music;
 
 /*
-	* LunarBot v2.3.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+	* LunarBot v2.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
 	*
 	* Pause
 	* Pauses the current track.

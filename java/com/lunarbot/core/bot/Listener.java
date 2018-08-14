@@ -1,15 +1,17 @@
 package com.lunarbot.core.bot;
 
 /*
-    * LunarBot v2.3.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Listener
     * Handles the process of processing commands and listening for events.
  */
 
 import com.lunarbot.commands.toontown.Roles;
+import net.dv8tion.jda.core.entities.Emote;
 import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.core.events.guild.member.GuildMemberLeaveEvent;
 import net.dv8tion.jda.core.events.guild.voice.GuildVoiceLeaveEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.events.message.guild.react.GenericGuildMessageReactionEvent;
@@ -22,6 +24,10 @@ public class Listener extends ListenerAdapter {
     public void onGuildMemberJoin(GuildMemberJoinEvent event){
         event.getGuild().getTextChannelById("461074685678059521").sendMessage("Welcome to the Lunar Draconis Discord server, " + event.getMember().getAsMention() + "! Please read over "
                 + "#rules, type `!agree` here in #welcome, then you will then be able to access the rest of the server.").queue();
+    }
+
+    public void onGuildMemberLeave(GuildMemberLeaveEvent event){
+        event.getGuild().getTextChannelById("456158433549352973").sendMessage(event.getMember().getEffectiveName() + " has left the server.").queue();
     }
 
     public void onGuildVoiceLeave(GuildVoiceLeaveEvent event){
@@ -65,7 +71,12 @@ public class Listener extends ListenerAdapter {
             return;
         }
 
-        ++Main.messageCount;
+        if(event.getMessage().getContentDisplay().toLowerCase().contains("Oldman")){
+            event.getMessage().delete().queueAfter(1, TimeUnit.SECONDS);
+            Emote satan = event.getGuild().getEmotesByName("Satan", true).get(0);
+            event.getChannel().sendMessage(event.getAuthor().getAsMention() + " you may only say " + satan.getAsMention() + "'s name once heck has frozen over.").queue();
+            return;
+        }
 
         if(!event.getChannel().getId().equalsIgnoreCase("456158433549352973")){
             String[] splitMessage = event.getMessage().getContentDisplay().split("\\s");
@@ -79,6 +90,8 @@ public class Listener extends ListenerAdapter {
                 }
             }
         }
+
+        ++Main.messageCount;
 
         if(event.getMessage().getContentDisplay().equalsIgnoreCase(Main.prefix + "agree")){
             Role clubMember = event.getGuild().getRolesByName("Club Member", true).get(0);
