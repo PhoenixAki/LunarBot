@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-    * LunarBot v2.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Listener
     * Handles the process of processing commands and listening for events.
@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class Listener extends ListenerAdapter {
     public void onGuildMemberJoin(GuildMemberJoinEvent event){
         event.getGuild().getTextChannelById("461074685678059521").sendMessage("Welcome to the Lunar Draconis Discord server, " + event.getMember().getAsMention() + "! Please read over "
-                + "#rules, type `!agree` here in #welcome, then you will then be able to access the rest of the server.").queue();
+                + "#rules, type `!agree` here in #welcome, then you will then be able to access the rest of the server.\n\nType `!role` in #bot-commands to choose a Toon-type role.").queue();
     }
 
     public void onGuildMemberLeave(GuildMemberLeaveEvent event){
@@ -71,7 +71,7 @@ public class Listener extends ListenerAdapter {
             return;
         }
 
-        if(event.getMessage().getContentDisplay().toLowerCase().contains("Oldman")){
+        if(event.getMessage().getContentDisplay().toLowerCase().contains("oldman")){
             event.getMessage().delete().queueAfter(1, TimeUnit.SECONDS);
             Emote satan = event.getGuild().getEmotesByName("Satan", true).get(0);
             event.getChannel().sendMessage(event.getAuthor().getAsMention() + " you may only say " + satan.getAsMention() + "'s name once heck has frozen over.").queue();

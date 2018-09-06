@@ -1,7 +1,7 @@
 package com.lunarbot.commands;
 
 /*
-    * LunarBot v2.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Command
     * Abstract class that is extended to all commands. Mainly used as a container for command information such as category, help, etc.

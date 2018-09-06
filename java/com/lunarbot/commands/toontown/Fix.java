@@ -1,7 +1,7 @@
 package com.lunarbot.commands.toontown;
 
 /*
-    * LunarBot v2.4 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Fix
     * FIX GAM
@@ -16,7 +16,7 @@ import static com.lunarbot.commands.Category.TOONTOWN;
 
 public class Fix extends Command {
     public Fix(){
-        super(TOONTOWN, "fix` - FIX GAM", "fix` - RELEAS GAM", "Fix");
+        super(TOONTOWN, "fix` - FIX GAM", "fix` - FIX GAM", "Fix");
     }
 
     public void action(String[] args, MessageReceivedEvent event){
