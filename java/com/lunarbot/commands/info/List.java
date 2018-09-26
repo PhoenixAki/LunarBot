@@ -1,12 +1,12 @@
 package com.lunarbot.commands.info;
 
 /*
- 	* LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+ 	* LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
  	* 
  	* List
  	* Returns a list of all commands for the given category (listed in the enum Category).
  	* Takes in format !list info/music/toontown
- */
+*/
 
 import com.lunarbot.commands.Command;
 import com.lunarbot.core.bot.Main;

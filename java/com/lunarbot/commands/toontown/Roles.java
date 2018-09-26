@@ -1,11 +1,11 @@
 package com.lunarbot.commands.toontown;
 
 /*
-  * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
-  *
-  * Roles
-  * Manages roles for a user.
-  * Takes in format !role
+    * LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    *
+    * Roles
+    * Manages roles for a user.
+    * Takes in format !role
 */
 
 import com.lunarbot.commands.Command;

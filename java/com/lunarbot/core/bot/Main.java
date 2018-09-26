@@ -1,7 +1,7 @@
 package com.lunarbot.core.bot;
 
 /*
-	* LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+	* LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
 	* 
 	* Main
 	* Mostly startup tasks and variable storage for use from commands.
@@ -12,6 +12,7 @@ import com.lunarbot.commands.Command;
 import com.lunarbot.commands.info.*;
 import com.lunarbot.commands.info.Shutdown;
 import com.lunarbot.commands.music.*;
+import com.lunarbot.commands.toontown.Gags;
 import com.lunarbot.commands.toontown.Group;
 import com.lunarbot.commands.toontown.Fix;
 import com.lunarbot.commands.toontown.Roles;
@@ -37,7 +38,7 @@ import java.util.Scanner;
 public class Main {
 
     //Bot Info Variables
-    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v2.4.1", prefix = "!";
+    public static final String THUMBNAIL = "https://i.imgur.com/ZQgB8FX.png", version = "v2.5", prefix = "!";
     public static long commandCount = 0, messageCount = 0, startupTime;
     private static String botToken;
     static String[] badWords = {"ass", "asshole", "bastard", "bitch", "cunt", "damn", "dick", "fag", "fuck", "nigger", "penis", "pussy", "sex", "shit", "vagina"};
@@ -124,6 +125,7 @@ public class Main {
 
         //Toontown list
 		commands.put("fix", new Fix());
+		commands.put("gags", new Gags());
 		commands.put("group", new Group());
 		commands.put("role", new Roles());
 

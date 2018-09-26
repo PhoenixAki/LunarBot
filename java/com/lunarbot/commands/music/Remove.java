@@ -1,12 +1,12 @@
 package com.lunarbot.commands.music;
 
 /*
-    * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Remove
     * Removes a track from the queue, based on its position in the queue.
     * Takes in format !remove songNumber
- */
+*/
 
 import com.lunarbot.commands.Command;
 

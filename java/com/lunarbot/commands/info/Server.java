@@ -1,12 +1,12 @@
 package com.lunarbot.commands.info;
 
 /*
-    * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Server
     * Outputs relevant information about the server.
     * Takes in format !server
- */
+*/
 
 import com.lunarbot.commands.Command;
 import com.lunarbot.core.bot.Main;

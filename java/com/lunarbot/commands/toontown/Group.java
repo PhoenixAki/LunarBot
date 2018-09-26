@@ -1,12 +1,12 @@
 package com.lunarbot.commands.toontown;
 
 /*
- * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
- *
- * Group
- * Coordinates groups.
- * Takes in formats !group list, !group join groupNumber, !group add sizeHere titleHere, !group remove groupNumber, !group leave groupNumber
- */
+    * LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    *
+    * Group
+    * Coordinates groups.
+     * Takes in formats !group list, !group join groupNumber, !group add sizeHere titleHere, !group remove groupNumber, !group leave groupNumber
+*/
 
 import com.lunarbot.commands.Command;
 import com.lunarbot.commands.GameGroup;

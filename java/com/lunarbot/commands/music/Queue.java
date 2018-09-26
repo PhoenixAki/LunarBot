@@ -1,12 +1,12 @@
 package com.lunarbot.commands.music;
 
 /*
-    * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Queue
     * Outputs info about the current queue, up to the first 10 songs (to avoid the embed being too long).
     * Takes in format !queue clear
- */
+*/
 
 import com.lunarbot.commands.Command;
 

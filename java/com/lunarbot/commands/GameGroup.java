@@ -1,5 +1,13 @@
 package com.lunarbot.commands;
 
+/*
+    * LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    *
+    * Voice
+    * Handles LunarBot joining or leaving voice channels.
+    * Takes in format !voice join/leave
+*/
+
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 

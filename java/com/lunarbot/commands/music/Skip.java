@@ -1,12 +1,12 @@
 package com.lunarbot.commands.music;
 
 /*
-    * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Skip
     * Skips the current track and loads the next track in the queue.
     * Takes in format !skip
- */
+*/
 
 import com.lunarbot.commands.Command;
 

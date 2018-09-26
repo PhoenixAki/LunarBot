@@ -1,12 +1,12 @@
 package com.lunarbot.commands.music;
 
 /*
-    * LunarBot v2.4.1 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
+    * LunarBot v2.5 by PhoenixAki: General purpose bot for usage in the TTCC Lunar Draconis clan server.
     *
     * Seek
     * Skips to the given time in the playing track.
     * Takes in format !seek mm:ss
- */
+*/
 
 import com.lunarbot.commands.Command;
 import com.lunarbot.core.bot.Main;
